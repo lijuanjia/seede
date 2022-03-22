@@ -1,17 +1,38 @@
 <template>
   <div class="menu">
-    <div class="item-menu" v-for="item in tabArr">
-      <div
-        class="in-block menu-img"
-        :style="{ backgroundImage: 'url(' + item.img + ')' }"
-      ></div>
-      <div class="in-block font16">{{ item.title }}</div>
+    <div class="content">
+      <div class="item-menu in-block" v-for="item in tabArr">
+        <div
+          class="in-block menu-img"
+          :style="{ backgroundImage: 'url(' + item.img + ')' }"
+        ></div>
+        <div
+          class="in-block font16"
+          :class="item.id == currentTab.id ? 'active' : ''"
+          @click="changeTab(item)"
+        >
+          {{ item.title }}
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
+  props: {
+    currentTab: {
+      type: Object,
+      default: () => {
+        return {
+          id: "1",
+          title: "设计案例",
+          mark: "case",
+          img: require("../assets/ice.png"),
+        };
+      },
+    },
+  },
   data() {
     return {
       tabArr: [
@@ -42,26 +63,44 @@ export default {
       ],
     };
   },
+  methods: {
+    changeTab(item) {
+      console.log(item);
+      // this.currentTab = item;
+      this.$emit("update:currentTab", item);
+    },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 @media screen and (max-width: 500px) {
   .menu {
-    display:none;
+    display: none;
   }
 }
 @media screen and (min-width: 500px) {
   .menu {
-    display: flex;
-    justify-content: flex-start;
+    position: fixed;
+    width: 1440px;
     height: 130px;
-    align-items: center;
-    padding: 0 80px;
+    top: 150px;
+    overflow: hidden;
+    background: #fafafa;
+    z-index: 1;
+    .content {
+      padding-left: 80px;
+      text-align: left;
+      // display: flex;
+      // justify-content: flex-start;
+      // align-items: center;
+      // width: 1440px;
+    }
     .item-menu {
       height: 130px;
       line-height: 130px;
       margin-right: 80px;
+
     }
     .menu-img {
       background-repeat: no-repeat;
@@ -80,5 +119,8 @@ export default {
       cursor: pointer;
     }
   }
+}
+.active {
+  color: #53dfe0 !important;
 }
 </style>

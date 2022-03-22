@@ -1,20 +1,7 @@
 
- .main {
-  position: relative;
-  height: 100%;
-  background: #FAFAFA;
-  height: 600px;
-  margin: 0 auto;
-  padding-top: 150px;
- }
-.seede-header{
-  position:fixed;
-  width: 100%;
-  height: 150px;
-  background: #FFFFFF;
-  top: 0;
-}
+
 @media screen and (max-width: 500px) {
+
   .seede-header{
     position:fixed;
     width: 100%;
@@ -22,7 +9,37 @@
     background: #FFFFFF;
     top: 0;
   }
+
+}
+@media screen and (min-width: 500px) {
+  .main {
+    position: relative;
+    width: 1440px;
+    height: 100%;
+    padding-top: 280px;
+    padding-bottom: 30px;
+    margin: 0 auto;
+    background: #FAFAFA;
+   }
+
+  .seede-header{
+    position:fixed;
+    width: 1440px;
+    height: 150px;
+    top: 0;
+    background: #FFFFFF;
+    z-index: 1;
+  }
+  .main-bottom{
+    font-family: 'Source Han Sans CN';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 21px;
+    color: #000000;
+  }
 }
 .in-block{
   display: inline-block;
 }
+

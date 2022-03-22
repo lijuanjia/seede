@@ -8,8 +8,15 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'main',
-      component: main
+      redirect:'seede/index',
+      component: main,
+      children:[
+        {
+          path:'seede/index',
+          name:'index',
+          component:main
+        }
+      ]
     }
   ]
 })
