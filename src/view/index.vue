@@ -3,8 +3,9 @@
     <top-header></top-header>
     <top-menu @menuChange="menuChange" :currentTab.sync="currentTab"></top-menu>
     <div class="content">
-      <about-us v-show="currentTab.id==2"></about-us>
-      <range v-show="currentTab.id==3"></range>
+      <about-us v-show="currentTab.id == 2"></about-us>
+      <range v-show="currentTab.id == 3"></range>
+      <contact-us v-show="currentTab.id == 4"></contact-us>
     </div>
     <div class="main-bottom">Do What Makes Your Soul Happy @ Seeed studio</div>
   </div>
@@ -15,8 +16,9 @@ import topHeader from "./header.vue";
 import topMenu from "./menu.vue";
 import aboutUs from "./aboutUs.vue";
 import range from "./range.vue";
+import contactUs from "./contactUs.vue";
 export default {
-  components: { topHeader, topMenu, aboutUs,range },
+  components: { topHeader, topMenu, aboutUs, range, contactUs },
   data() {
     return {
       msg: "",
@@ -28,13 +30,13 @@ export default {
       },
     };
   },
-  watch:{
-    currentTab:{
-      handler(val){
-        console.log(val,'watch')
+  watch: {
+    currentTab: {
+      handler(val) {
+        console.log(val, "watch");
       },
-      deep:true
-    }
+      deep: true,
+    },
   },
   methods: {
     menuChange(data) {
