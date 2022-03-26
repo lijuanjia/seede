@@ -3,6 +3,7 @@
     <top-header></top-header>
     <top-menu @menuChange="menuChange" :currentTab.sync="currentTab"></top-menu>
     <div class="content">
+      <scheme v-show="currentTab.id == 1"></scheme>
       <about-us v-show="currentTab.id == 2"></about-us>
       <range v-show="currentTab.id == 3"></range>
       <contact-us v-show="currentTab.id == 4"></contact-us>
@@ -14,11 +15,12 @@
 <script>
 import topHeader from "./header.vue";
 import topMenu from "./menu.vue";
+import scheme from "./scheme.vue";
 import aboutUs from "./aboutUs.vue";
 import range from "./range.vue";
 import contactUs from "./contactUs.vue";
 export default {
-  components: { topHeader, topMenu, aboutUs, range, contactUs },
+  components: {scheme, topHeader, topMenu, aboutUs, range, contactUs },
   data() {
     return {
       msg: "",

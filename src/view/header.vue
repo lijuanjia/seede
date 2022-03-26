@@ -79,49 +79,49 @@ export default {};
   }
 }
 @media screen and (min-width: 500px) {
-  .logo-flower{
-    display:none;
+  .logo-flower {
+    display: none;
   }
-  .menu-but{
-    display:none;
+  .menu-but {
+    display: none;
   }
-  .logo-img{
-    width:144px;
-    height:59px;
+  .logo-img {
+    width: 144px;
+    height: 59px;
   }
   .web-header {
     padding: 0 80px;
   }
 }
 @media screen and (max-width: 500px) {
-  .main-tips{
+  .main-tips {
     display: none;
   }
-  .right{
+  .right {
     display: none;
   }
-  .logo-flower{
-    width:23px;
-    height:30px;
-    margin-right:5px;
-    display:inline-block;
+  .logo-flower {
+    width: 23px;
+    height: 30px;
+    margin-right: 5px;
+    display: inline-block;
   }
-  .logo-img{
-    width:68px;
-    height:28px;
-    display:inline-block;
+  .logo-img {
+    width: 68px;
+    height: 28px;
+    display: inline-block;
   }
   .web-header {
     padding: 0;
   }
-  .main-title{
-    width:auto !important;
-    margin-left:10px;
+  .main-title {
+    width: auto !important;
+    margin-left: 10px;
   }
-  .menu-but{
-    display:inline-block;
-    width:25px;
-    height:21px;
+  .menu-but {
+    display: inline-block;
+    width: 25px;
+    height: 21px;
     position: absolute;
     left: 87%;
     top: 33%;
